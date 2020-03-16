@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,21 +22,23 @@ namespace Demoxml
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		List<Calciatore> calciatori;
 		public MainWindow()
 		{
 			InitializeComponent();
 		}
 
+		bool flag = false;
+
 		private void Btn_aggiorna_Click(object sender, RoutedEventArgs e)
 		{
+			Lst_calciatori.Items.Clear();
 			Task.Factory.StartNew(()=>CaricaDati());
-
+			flag = true;
 		}
 
 		private void CaricaDati()
 		{
-			calciatori = new List<Calciatore>();
+			Calciatore giocatori =new Calciatore();
 			string path = @"Calciatori.xml";
 			XDocument xmlDoc = XDocument.Load(path);
 			XElement xmlcalciatori = xmlDoc.Element("calciatori");
@@ -51,9 +54,20 @@ namespace Demoxml
 				a.Cognome = xmlLastName.Value;
 				a.Squadra = xmlSquadra.Value;
 				a.Data = Convert.ToDateTime(xmlNascita.Value);
-				calciatori.Add(a);
+				giocatori = a;
+				Dispatcher.Invoke(() => Lst_calciatori.Items.Add(giocatori));
+				Thread.Sleep(300);
+				if (!flag)
+				{
+					break;
+				}
 			}
-			Dispatcher.Invoke(()=>Lst_calciatori.ItemsSource = calciatori);
+			
+		}
+
+		private void Btn_stop_Click(object sender, RoutedEventArgs e)
+		{
+			flag = false;
 		}
 	}
 }

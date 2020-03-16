@@ -7,8 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button x:Name="Btn_aggiorna" Content="Visualizza dati" HorizontalAlignment="Left" Margin="53,44,0,0" VerticalAlignment="Top" Width="104" Click="Btn_aggiorna_Click"/>
-        <ListBox x:Name="Lst_calciatori" HorizontalAlignment="Left" Height="163" Margin="53,115,0,0" VerticalAlignment="Top" Width="263"/>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF00FF23" Offset="0"/>
+                <GradientStop Color="#FF002EFF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button x:Name="Btn_aggiorna" Content="Visualizza dati" HorizontalAlignment="Left" Margin="53,56,0,0" VerticalAlignment="Top" Width="181" Click="Btn_aggiorna_Click" Height="35"/>
+        <ListBox x:Name="Lst_calciatori" HorizontalAlignment="Left" Height="163" Margin="53,115,0,0" VerticalAlignment="Top" Width="431"/>
+        <Button x:Name="Btn_stop" Content="Stop" HorizontalAlignment="Left" Margin="308,56,0,0" VerticalAlignment="Top" Width="176" Height="35" Click="Btn_stop_Click"/>
 
     </Grid>
 </Window>
