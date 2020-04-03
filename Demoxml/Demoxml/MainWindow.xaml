@@ -14,8 +14,14 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Button x:Name="Btn_aggiorna" Content="Visualizza dati" HorizontalAlignment="Left" Margin="53,56,0,0" VerticalAlignment="Top" Width="181" Click="Btn_aggiorna_Click" Height="35"/>
-        <ListBox x:Name="Lst_calciatori" HorizontalAlignment="Left" Height="163" Margin="53,115,0,0" VerticalAlignment="Top" Width="431"/>
+        <ListBox x:Name="Lst_calciatori" HorizontalAlignment="Left" Height="163" Margin="53,115,0,0" VerticalAlignment="Top" Width="166"/>
         <Button x:Name="Btn_stop" Content="Stop" HorizontalAlignment="Left" Margin="308,56,0,0" VerticalAlignment="Top" Width="176" Height="35" Click="Btn_stop_Click"/>
+        <TextBox x:Name="txt_nome" HorizontalAlignment="Left" Height="29" Margin="285,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox x:Name="txt_cognome" HorizontalAlignment="Left" Height="29" Margin="285,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox x:Name="txt_squadra" HorizontalAlignment="Left" Height="29" Margin="285,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox x:Name="txt_eta" HorizontalAlignment="Left" Height="29" Margin="285,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <Button x:Name="btn_modifica" Content="modifica" HorizontalAlignment="Left" Margin="285,275,0,0" VerticalAlignment="Top" Width="75" Click="btn_modifica_Click"/>
+        <Button x:Name="btn_salva" Content="salva" HorizontalAlignment="Left" Margin="392,275,0,0" VerticalAlignment="Top" Width="75" Click="btn_salva_Click"/>
 
     </Grid>
 </Window>
